@@ -4,7 +4,7 @@
       <input type="text" class="form-control" disabled v-bind:value="option.text" v-bind:title="option.text">
       <div class="input-group-append">
         <button class="btn btn-outline-danger" type="button" @click="removeOption(option)">
-          <i class="fas fa-trash-alt"></i>
+          <font-awesome-icon :icon="['fas', 'trash-alt']" />
         </button>
       </div>
     </div>

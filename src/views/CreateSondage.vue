@@ -9,7 +9,7 @@
         <div class="col-md-10 offset-md-1">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inp_question" >??</span>
+              <span class="input-group-text" id="inp_question" ><font-awesome-icon :icon="['fas', 'question']" /></span>
             </div>
             <input type="text" class="form-control" aria-label="question" placeholder="Ecrivez une question..." aria-describedby="inp_question" v-model="question">
           </div>
@@ -18,7 +18,7 @@
         <div class="col-md-8 offset-md-2">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inp_option" >??</span>
+              <span class="input-group-text" id="inp_option" ><font-awesome-icon :icon="['fas', 'step-forward']" /></span>
             </div>
             <input type="text" class="form-control" aria-label="question" placeholder="Ecrivez une option..." aria-describedby="inp_option" v-model="newOption" v-on:keypress.enter="addOption">
           </div>

@@ -1,6 +1,5 @@
 # vue-app-2
-
-## Project setup
+https://yoansaudrais.github.io/vue-app-2/ .## Project setup
 ```
 npm install
 ```

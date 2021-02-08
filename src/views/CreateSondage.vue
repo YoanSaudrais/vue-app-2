@@ -2,7 +2,7 @@
   <div class="container" style="margin-top: 150px;">
     <div class="card text-center">
       <div class="card-header">
-        <h1>Sondage</h1>
+        <h1>Création du Sondage</h1>
       </div>
       <div class="card-body">
         <span class="lead">Posez votre question</span>
@@ -33,7 +33,7 @@
             Supprimer toutes les options
           </button>
         </div>
-        <button type="button" class="validate-button btn btn-outline-info float-right" v-bind:disabled="isExist()" v-on:click="createSondage">
+        <button type="button" class="validate-button btn btn-outline-info float-right" v-bind:disabled="isExist()" v-on:click="createSondage" >
           Créer le Sondage
         </button>
       </div>
@@ -95,7 +95,7 @@ name: "Accueil",
           sondage.options.push(newOption);
         }
       });
-    }
+    },
   },
   mounted() {
     console.log(this.$el.textContent);

@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "question": "Comment ça va ?",
+    "options": [
+      {
+        "id_o" : 1,
+        "libelle": "Oui"
+      },
+      {
+        "id_o" : 2,
+        "libelle": "Non"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Comment je m'appelle ?",
+    "options": [
+      {
+        "id_o" : 1,
+        "libelle": "Bertrand"
+      },
+      {
+        "id_o" : 2,
+        "libelle": "Louis"
+      },
+      {
+        "id_o" : 3,
+        "libelle": "Yoan"
+      }
+    ]
+  }
+]

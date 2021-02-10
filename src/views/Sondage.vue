@@ -1,19 +1,23 @@
 <template>
   <div class="container" style="margin-top: 150px;">
-    <div class="card text-center">
-      <div class="card-header">
+    <div class="card ">
+      <div class="card-header text-center">
         <h1>Sondage</h1>
       </div>
       <div class="card-body">
         <div class="row">
-          <span class="lead">{{ filteredSondages.id }}</span>
+          <div class="col-md-12 text-center">
+            <span class="lead">{{ sondage.question }}</span>
+          </div>
         </div>
-        <div>
-          <ul>
-            <li v-for="sondage in filteredSondages" :key="sondage.id">
-                {{sondage.options}}
-            </li>
-          </ul>
+        <div class="row">
+          <div class="col-md-12">
+            <ul>
+              <li v-for="o in sondage.options" :key="o">
+                {{ o }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="card-footer">
@@ -27,20 +31,20 @@
 
 <script>
 
-import sondagesData from "@/json/sondages.json";
 
 export default {
   name: "Sondage",
   data() {
     return {
-      sondages: sondagesData,
+      sondage:{
+        question:"",
+        options:[],
+      },
     };
   },
 
-  computed: {
-    filteredSondages() {
-      return this.sondages.filter(sondages => sondages.id === this.$route.params.id );
-    }
+  created() {
+    this.sondage = JSON.parse(localStorage.getItem("sondage"));
   }
 }
 </script>

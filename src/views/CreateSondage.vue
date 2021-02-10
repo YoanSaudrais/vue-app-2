@@ -33,7 +33,7 @@
             Supprimer toutes les options
           </button>
         </div>
-        <button type="button" class="validate-button btn btn-outline-info float-right" v-bind:disabled="isExist()" v-on:click="createSondage" >
+        <button type="button" class="validate-button btn btn-outline-info float-right" v-bind:disabled="isExist()" @click="addSondage(question,options)" >
           Créer le Sondage
         </button>
       </div>
@@ -55,7 +55,7 @@ name: "Accueil",
       newOption: "",
       options: [],
       errorMessage: "",
-      buttonShown: false
+      buttonShown: false,
     };
   },
   methods: {
@@ -66,9 +66,9 @@ name: "Accueil",
     },
 
     addOption() {
-      this.options.push({
-        text: this.newOption
-      });
+      this.options.push(
+        this.newOption
+      );
       this.newOption = "";
     },
 
@@ -83,22 +83,20 @@ name: "Accueil",
           this.question === ""
       );
     },
-    createSondage() {
-      var sondage = {
-        question: this.question,
-        options: []
-      };
+    addSondage : function(question,options){
+      var unSondage = {
+        question:"",
+        options:[]
+      }
+      var sondage = localStorage.getItem("unSondage");
+      if (sondage == "" || sondage == null) {
+        localStorage.setItem("sondage", JSON.stringify([]));
+      }
+      unSondage.question = question;
+      unSondage.options = options;
+      localStorage.setItem("sondage", JSON.stringify(unSondage));
 
-      this.options.forEach(element => {
-        var newOption = { name: element.text };
-        if (element.text !== "") {
-          sondage.options.push(newOption);
-        }
-      });
     },
-  },
-  mounted() {
-    console.log(this.$el.textContent);
   },
   watch: {
     options() {

@@ -1,7 +1,7 @@
 <template >
   <div class="option-input row justify-content-center no-gutters">
     <div class="input-group mb-3">
-      <input type="text" class="form-control" disabled v-bind:value="option.text" v-bind:title="option.text">
+      <input type="text" class="form-control" disabled v-bind:value="option" v-bind:title="option">
       <div class="input-group-append">
         <button class="btn btn-outline-danger" type="button" @click="removeOption(option)">
           <font-awesome-icon :icon="['fas', 'trash-alt']" />

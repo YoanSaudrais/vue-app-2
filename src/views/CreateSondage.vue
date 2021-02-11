@@ -33,9 +33,11 @@
             Supprimer toutes les options
           </button>
         </div>
-        <button type="button" class="validate-button btn btn-outline-info float-right" v-bind:disabled="isExist()" @click="addSondage(question,options)" >
-          Créer le Sondage
-        </button>
+        <a href="/#/sondage" target="_blank">
+          <button type="button" class="validate-button btn btn-outline-info float-right" v-bind:disabled="isExist()" @click="addSondage(question,options)" >
+            Créer le Sondage
+          </button>
+        </a>
       </div>
     </div>
     <div v-show="errorMessage !== ''" class="error-message alert alert-danger" role="alert" v-text="errorMessage"></div>

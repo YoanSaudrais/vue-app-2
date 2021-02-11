@@ -13,17 +13,24 @@
         <div class="row">
           <div class="col-md-12">
             <ul>
-              <li v-for="o in sondage.options" :key="o">
-                {{ o }}
-              </li>
+                <li v-for="o in sondage.options" :key="o">
+                  <div class="form-check float-left">
+                    <input v-model="option" class="form-check-input" type="radio" v-bind:id="o" v-bind:value="o">
+                    <label class="form-check-label" for="o">
+                      {{ o }}
+                    </label>
+                  </div>
+                </li>
             </ul>
           </div>
         </div>
       </div>
       <div class="card-footer">
-        <button type="button" class="save-button btn btn-outline-info float-right">
-          Enregistrer
-        </button>
+        <a href="/#/result">
+          <button type="button" class="save-button btn btn-outline-info float-right" @click="saveSondage(sondage.question,option)">
+            Enregistrer
+          </button>
+        </a>
       </div>
     </div>
   </div>
@@ -40,7 +47,26 @@ export default {
         question:"",
         options:[],
       },
+      questionS: "",
+      option:"",
     };
+  },
+  methods: {
+
+    saveSondage : function(questionS,option){
+
+      var unResult = {
+        questionS:"",
+        option:""
+      }
+      var result = localStorage.getItem("unResult");
+      if (result == "" || result == null) {
+        localStorage.setItem("result", JSON.stringify([]));
+      }
+      unResult.questionS = questionS;
+      unResult.option = option;
+      localStorage.setItem("result", JSON.stringify(unResult));
+    },
   },
 
   created() {

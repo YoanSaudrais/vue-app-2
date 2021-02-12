@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="card-footer">
-        <a href="/#/result">
+        <a href="/vue-app-2/#/result">
           <button type="button" class="save-button btn btn-outline-info float-right" @click="saveSondage(sondage.question,option)">
             Enregistrer
           </button>

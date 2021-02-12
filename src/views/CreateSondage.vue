@@ -33,7 +33,7 @@
             Supprimer toutes les options
           </button>
         </div>
-        <a href="/#/sondage" target="_blank">
+        <a href="/vue-app-2/#/sondage" target="_blank">
           <button type="button" class="validate-button btn btn-outline-info float-right" v-bind:disabled="isExist()" @click="addSondage(question,options)" >
             Créer le Sondage
           </button>

@@ -40,7 +40,6 @@
         </a>
       </div>
     </div>
-    <div v-show="errorMessage !== ''" class="error-message alert alert-danger" role="alert" v-text="errorMessage"></div>
   </div>
 </template>
 
@@ -101,6 +100,7 @@ name: "Accueil",
     },
   },
   watch: {
+    //Executer à chaque fois que la valeur de options change
     options() {
       this.buttonShown = this.options != null && !(this.options.length === 0);
     }

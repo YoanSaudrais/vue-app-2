@@ -16,7 +16,7 @@
                 <li v-for="o in sondage.options" :key="o">
                   <div class="form-check float-left">
                     <input v-model="option" class="form-check-input" type="radio" v-bind:id="o" v-bind:value="o">
-                    <label class="form-check-label" for="o">
+                    <label class="form-check-label" v-bind:for="o">
                       {{ o }}
                     </label>
                   </div>

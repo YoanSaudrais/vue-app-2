@@ -27,6 +27,7 @@ export default {
     }
   },
   methods: {
+    //Déclenche l'évenement removed-option en transmettant l'option à supprimer
     removeOption(option) {
       this.$emit("removed-option", option);
     }
